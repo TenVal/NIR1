@@ -1,0 +1,55 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+interface MainWindow {
+cancer_brain_1
+cancer_brain_2
+cancer_brain_3
+cancer_brain_4
+eq_cancer
+on_clicked_calc()
+read_r_file()
+get_x_y_r()
+on_slider_moved()
+on_slider_moved_2()
+on_slider_moved_3()
+on_slider_moved_4()
+}
+
+class ValueInFile {
+values
+format_values()
+write_in()
+}
+
+class CancerEquation {
+l1
+b
+d
+e
+l3
+u
+dx_r()
+dy_r()
+dz()
+dy()
+dz()
+}
+
+class PlotCanvas{
+fig
+plot()
+plot_sphere()
+}
+
+class RK {
+type
+RK4_2D()
+RK4_3D()
+}
+MainWindow "1" *-- "1" ValueInFile : contains
+MainWindow "1" *-- "many" PlotCanvas : contains
+PlotCanvas "1" *-- "1" CancerEquation : contains
+PlotCanvas "1" *-- "1" RK : contains
+
+@enduml
